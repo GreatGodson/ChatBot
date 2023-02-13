@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class MyTheme {
   /// definitions for the app theme
   static final appTheme = ThemeData(
+    // useMaterial3: true,
     scaffoldBackgroundColor: AppColors.primaryColor,
     primaryColor: AppColors.primaryColor,
     iconTheme: const IconThemeData(color: AppColors.iconColor),

@@ -5,14 +5,18 @@ import 'dart:math' as math;
 /// custom search text form field
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    required this.textEditingController,
-    required this.onChanged,
-  }) : super(key: key);
+  const CustomTextField(
+      {Key? key,
+      required this.textEditingController,
+      required this.onChanged,
+      required this.onFieldSubmitted,
+      required this.iconOnPressed})
+      : super(key: key);
 
   final TextEditingController textEditingController;
   final Function(String) onChanged;
+  final Function(String) onFieldSubmitted;
+  final VoidCallback iconOnPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,10 @@ class CustomTextField extends StatelessWidget {
       shadowColor: AppColors.primaryColor,
       color: AppColors.primaryColor,
       child: TextFormField(
+        enableSuggestions: true,
+        keyboardType: TextInputType.multiline,
+        onFieldSubmitted: onFieldSubmitted,
+        maxLines: null,
         onChanged: onChanged,
         controller: textEditingController,
         style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -28,7 +36,6 @@ class CustomTextField extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: 18,
             ),
-        keyboardType: TextInputType.text,
         cursorColor: AppColors.whiteColor,
         decoration: InputDecoration(
           filled: true,
@@ -42,7 +49,7 @@ class CustomTextField extends StatelessWidget {
             borderSide: const BorderSide(color: AppColors.primaryColor),
           ),
           suffixIcon: IconButton(
-              onPressed: () {},
+              onPressed: iconOnPressed,
               icon: Transform.rotate(
                 angle: -45 * math.pi / 180,
                 child: Icon(

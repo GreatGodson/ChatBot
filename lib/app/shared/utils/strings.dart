@@ -7,4 +7,5 @@ class AppStrings {}
 
 class AssetStrings {
   static const String gptIcon = "$assetIcons/gpticon.png";
+  static const String gptDarkIcon = "$assetIcons/chatgptdark.png";
 }

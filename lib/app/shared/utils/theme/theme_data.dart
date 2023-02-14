@@ -15,7 +15,7 @@ class MyTheme {
       bodyLarge: TextStyle(
         color: AppColors.whiteColor,
       ),
-      titleMedium: TextStyle(color: AppColors.whiteColor, fontSize: 18),
+      titleMedium: TextStyle(color: AppColors.whiteColor, fontSize: 16),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(color: AppColors.primaryColor),
   );

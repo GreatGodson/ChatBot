@@ -3,17 +3,17 @@ import 'package:chat_gpt/app/shared/helpers/dimensions.dart';
 import 'package:chat_gpt/app/shared/utils/strings.dart';
 import 'package:chat_gpt/app/shared/utils/theme/app_colors.dart';
 import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_box_adapter.dart';
-import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ChatMessage extends ConsumerWidget {
   ChatMessage({Key? key, required this.text, required this.sender})
       : super(key: key);
 
   final String text;
   final String sender;
-  RegExp regExp = RegExp(r'[@#\$%^&*()":{}|<>]');
+  RegExp regExp = RegExp(r'[@#$%^&*()"{}|<>]');
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -62,7 +62,7 @@ class ChatMessage extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(
                               vertical: 20, horizontal: 20),
                           decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: AppColors.blackColor,
                               borderRadius: BorderRadius.circular(8)),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

@@ -12,7 +12,6 @@ class CustomSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: Theme.of(context).bottomAppBarTheme.color,
-      actions: [],
 
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(36),

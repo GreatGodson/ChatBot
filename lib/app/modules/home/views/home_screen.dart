@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:chat_gpt/app/shared/helpers/const.dart';
 import 'package:chat_gpt/app/shared/utils/strings.dart';
 import 'package:chat_gpt/app/shared/utils/theme/app_colors.dart';
 import 'package:chat_gpt/app/shared/views/widgets/chat_view.dart';
@@ -8,6 +7,7 @@ import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_box_adapter.dar
 import 'package:chat_gpt/app/shared/views/widgets/text_form.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final isTyping = StateProvider((ref) => false);
@@ -26,6 +26,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     // TODO: implement initState
+
     textEditingController = TextEditingController();
     chatGpt = ChatGPT.instance;
     listenToBot();
@@ -41,12 +42,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   List<ChatMessage> messages = [];
+  var t = dotenv.env['API_KEY'];
 
   void listenToBot() {
     final request = CompleteReq(
         prompt: AppStrings.prompt, model: kTranslateModelV3, max_tokens: 200);
     streamSubscription = chatGpt!
-        .builder(apiKey)
+        .builder(t!)
         .onCompleteStream(request: request)
         .listen((response) {
       ChatMessage botMessage =
@@ -81,9 +83,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             messages.insert(
                 0,
                 ChatMessage(
-                    text:
-                        'i\'m unable to reply to this at the moment 😭 call Godson! he built me!',
-                    sender: "bot"));
+                    text: AppStrings.unableToReply, sender: AppStrings.bot));
           });
         } else {}
       });
@@ -95,9 +95,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       final request = CompleteReq(
           prompt: message.text, model: kTranslateModelV3, max_tokens: 200);
 
-      var t = chatGpt!
-          .builder("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")
-          .onCompleteStream(request: request);
+      chatGpt!.builder(t!).onCompleteStream(request: request);
     }
   }
 

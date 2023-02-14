@@ -1,6 +1,5 @@
 import 'package:chat_gpt/app/shared/utils/strings.dart';
 import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_box_adapter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

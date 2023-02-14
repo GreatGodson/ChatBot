@@ -1,4 +1,3 @@
-import 'package:chat_gpt/app/modules/home/views/home_screen.dart';
 import 'package:chat_gpt/app/shared/helpers/dimensions.dart';
 import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_delegate.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class _CustomSliverPersistentHeaderState
       delegate: SliverAppBarDelegate(
         minHeight: context.deviceHeight(0.38),
         maxHeight: context.deviceHeight(0.38),
-        child: SizedBox.shrink(),
+        child: const SizedBox.shrink(),
 
         /// minHeight: 360,
         /// maxHeight: 360,

@@ -106,7 +106,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     setState(() {
       messages.insert(
           0,
-          ChatMessage(
+          const ChatMessage(
               text: AppStrings.botWelcomeMessage, sender: AppStrings.bot));
     });
   }
@@ -118,14 +118,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           text: textEditingController.text, sender: AppStrings.user);
       ref.read(isTyping.notifier).state = true;
 
-      Future.delayed(const Duration(seconds: 10), () {
+      Future.delayed(const Duration(seconds: 15), () {
         // ignore: unnecessary_null_comparison
         if (ref.read(isTyping.notifier).state) {
           ref.read(isTyping.notifier).state = false;
           setState(() {
             messages.insert(
                 0,
-                ChatMessage(
+                const ChatMessage(
                     text: AppStrings.unableToReply, sender: AppStrings.bot));
           });
         } else {}

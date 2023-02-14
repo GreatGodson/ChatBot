@@ -26,6 +26,7 @@ dependencies:
       url: https://github.com/iampawan/Flutter-ChatGPT.git
   flutter_svg: ^2.0.1
   flutter_dotenv: ^5.0.2
+  url_launcher: ^6.1.9
 
 
 

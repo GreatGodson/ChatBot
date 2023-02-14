@@ -15,6 +15,7 @@ class AppColors {
   static const Color yellowAccent = Colors.yellowAccent;
   static const orangeColor = Colors.orange;
   static const pinkColor = Colors.pink;
+  static const blueColor = Colors.blue;
 
   static const Color iconColor = Color(0XFF8E8E9F);
 
@@ -24,6 +25,7 @@ class AppColors {
       AppColors.yellowAccent,
       AppColors.orangeColor,
       AppColors.pinkColor,
+      AppColors.whiteColor,
     ];
     return colors[Random().nextInt(colors.length)];
   }

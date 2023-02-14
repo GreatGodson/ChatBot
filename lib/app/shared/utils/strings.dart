@@ -13,7 +13,7 @@ class AppStrings {
       "Hello there! i am a Chatbot built by Godson, how can i help you today?";
 
   static const String unableToReply =
-      '\n I\'m unable to reply to this at the moment.'
+      '\n I\'m unable to reply to this at the moment.\n'
       '\n I\'m either at capacity or your internet is slow 🙃 \n';
 }
 

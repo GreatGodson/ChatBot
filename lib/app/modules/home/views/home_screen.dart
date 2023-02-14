@@ -12,6 +12,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final isTyping = StateProvider((ref) => false);
 
+/// this is the first and home screen of the application
+
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -20,6 +22,44 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: Transform.translate(
+        offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
+        child: BottomAppBar(
+          elevation: 0.0,
+          color: Theme.of(context).bottomAppBarTheme.color,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            child: CustomTextField(
+                iconOnPressed: () {
+                  /// send a message
+                  sendMessage();
+                },
+                onFieldSubmitted: (val) {
+                  /// send a message
+                  sendMessage();
+                },
+                textEditingController: textEditingController,
+                onChanged: (val) {}),
+          ),
+        ),
+      ),
+      backgroundColor: AppColors.primaryColor,
+      body: SafeArea(
+        child: CustomScrollView(
+            physics: const NeverScrollableScrollPhysics(),
+            slivers: [
+              const CustomSliverAppBar(),
+              CustomSliverToBoxAdapter(
+                messages: messages,
+              ),
+            ]),
+      ),
+    );
+  }
+
   late TextEditingController textEditingController;
   ChatGPT? chatGpt;
   StreamSubscription? streamSubscription;
@@ -42,8 +82,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   List<ChatMessage> messages = [];
+
   var t = dotenv.env['API_KEY'];
 
+  /// listen to bot function
   void listenToBot() {
     final request = CompleteReq(
         prompt: AppStrings.prompt, model: kTranslateModelV3, max_tokens: 200);
@@ -69,6 +111,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     });
   }
 
+  ///send a message function
   void sendMessage() {
     if (textEditingController.text.isNotEmpty) {
       ChatMessage message = ChatMessage(
@@ -97,41 +140,5 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
       chatGpt!.builder(t!).onCompleteStream(request: request);
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Transform.translate(
-        offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
-        child: BottomAppBar(
-          elevation: 0.0,
-          color: Theme.of(context).bottomAppBarTheme.color,
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-            child: CustomTextField(
-                iconOnPressed: () {
-                  sendMessage();
-                },
-                onFieldSubmitted: (val) {
-                  sendMessage();
-                },
-                textEditingController: textEditingController,
-                onChanged: (val) {}),
-          ),
-        ),
-      ),
-      backgroundColor: AppColors.primaryColor,
-      body: SafeArea(
-        child: CustomScrollView(
-            physics: const NeverScrollableScrollPhysics(),
-            slivers: [
-              const CustomSliverAppBar(),
-              CustomSliverToBoxAdapter(
-                messages: messages,
-              ),
-            ]),
-      ),
-    );
   }
 }

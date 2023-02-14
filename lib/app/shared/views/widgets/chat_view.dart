@@ -6,6 +6,7 @@ import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_box_adapter.dar
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 
+/// this screen contains the listview for the chat screen
 // ignore: must_be_immutable
 class ChatMessage extends ConsumerWidget {
   ChatMessage({Key? key, required this.text, required this.sender})

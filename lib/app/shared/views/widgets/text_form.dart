@@ -2,7 +2,7 @@ import 'package:chat_gpt/app/shared/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-/// custom search text form field
+/// custom  text form field
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
         style: Theme.of(context).textTheme.titleMedium?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
-              fontSize: 18,
+              fontSize: 20,
             ),
         cursorColor: AppColors.whiteColor,
         decoration: InputDecoration(

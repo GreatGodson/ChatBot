@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+/// dots loaders when the bot is generating a response
 class ThreeDots extends StatefulWidget {
   const ThreeDots({super.key});
 

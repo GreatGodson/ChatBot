@@ -9,18 +9,14 @@ class MyTheme {
     primaryColor: AppColors.primaryColor,
     iconTheme: const IconThemeData(color: AppColors.iconColor),
     textTheme: const TextTheme(
-        headlineSmall: TextStyle(
-          color: AppColors.blackColor,
-          fontWeight: FontWeight.w500,
-        ),
-        titleMedium: TextStyle(
-          color: AppColors.whiteColor,
-          fontWeight: FontWeight.w500,
-        ),
-        bodyMedium: TextStyle(
-          color: AppColors.whiteColor,
-        ),
-        titleSmall: TextStyle(color: AppColors.blackColor)),
+      bodyMedium: TextStyle(
+        color: AppColors.whiteColor,
+      ),
+      bodyLarge: TextStyle(
+        color: AppColors.whiteColor,
+      ),
+      titleMedium: TextStyle(color: AppColors.whiteColor, fontSize: 18),
+    ),
     bottomAppBarTheme: const BottomAppBarTheme(color: AppColors.primaryColor),
   );
 }

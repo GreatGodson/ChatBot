@@ -118,6 +118,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           text: textEditingController.text, sender: AppStrings.user);
       ref.read(isTyping.notifier).state = true;
 
+      setState(() {
+        messages.insert(0, message);
+      });
+      textEditingController.clear();
+      final request = CompleteReq(
+          prompt: message.text, model: kTranslateModelV3, max_tokens: 200);
+
+      chatGpt!.builder(t!).onCompleteStream(request: request);
+
       Future.delayed(const Duration(seconds: 20), () {
         // ignore: unnecessary_null_comparison
         if (ref.read(isTyping.notifier).state) {
@@ -130,15 +139,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           });
         } else {}
       });
-
-      setState(() {
-        messages.insert(0, message);
-      });
-      textEditingController.clear();
-      final request = CompleteReq(
-          prompt: message.text, model: kTranslateModelV3, max_tokens: 200);
-
-      chatGpt!.builder(t!).onCompleteStream(request: request);
     }
   }
 }

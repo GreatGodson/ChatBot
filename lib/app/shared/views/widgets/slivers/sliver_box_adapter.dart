@@ -38,15 +38,15 @@ class _CustomSliverToBoxAdapterState
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 90),
 
       /// height: 500,
-      height: context.deviceHeight(0.64),
+      height: context.deviceHeight(0.8),
       child: Column(
         children: [
           Expanded(
             child: ListView.builder(
-                padding: const EdgeInsets.only(bottom: 40),
+                // padding: const EdgeInsets.only(bottom: 40),
                 reverse: true,
                 itemCount: widget.messages.length,
                 itemBuilder: (context, index) {

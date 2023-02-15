@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-Widget linkWidget(List<TextSpan> textSpans){
+Widget linkWidget(List<TextSpan> textSpans) {
   return Expanded(
-    child: RichText(
-      text: TextSpan(
+    child: SelectableText.rich(
+      TextSpan(
         children: textSpans,
       ),
     ),

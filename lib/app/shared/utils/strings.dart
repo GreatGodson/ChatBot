@@ -10,7 +10,12 @@ class AppStrings {
   static const String copyToClipboard = "Copy to Clipboard!";
   static const String copiedToClipboard = "Copied to Clipboard!";
   static const String botWelcomeMessage =
-      "Hello there! i am a Chatbot built by Godson, how can i help you today?";
+      "Hello there! i am a ChatBot built by Godson, how can i help you today?";
+
+  // static const String botWelcomeMessage =
+  //     "Hello Princess! 👸 i am your Custom ChatBot "
+  //     "how can i serve you today? \n"
+  //     "-----😘 😘 Tofunmi Aboloye";
 
   static const String unableToReply =
       '\n I\'m unable to reply to this at the moment.\n'

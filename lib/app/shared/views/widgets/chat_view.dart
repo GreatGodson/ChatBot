@@ -50,7 +50,7 @@ class ChatMessage extends ConsumerWidget {
                   child: Text(
                     text.trim(),
                     textAlign: TextAlign.justify,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 )
               : ResponseTypeHelper.codeRegEx.hasMatch(text)
@@ -58,10 +58,10 @@ class ChatMessage extends ConsumerWidget {
                   : ResponseTypeHelper.linkRegex.hasMatch(text)
                       ? ResponseTypeHelper.getLinkRichText(text.trim(), context)
                       : Expanded(
-                          child: Text(
+                          child: SelectableText(
                             text.trim(),
                             textAlign: TextAlign.justify,
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ),
         ],

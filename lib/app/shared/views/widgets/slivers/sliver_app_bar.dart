@@ -12,31 +12,20 @@ class CustomSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: Theme.of(context).bottomAppBarTheme.color,
-
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(36),
-      ),
-
       pinned: true,
       snap: true,
       floating: true,
 
-      expandedHeight: context.deviceHeight(0.2),
+      expandedHeight: context.deviceHeight(0.1),
 
       /// expandedHeight: 280,
       flexibleSpace: FlexibleSpaceBar(
-        title: Container(
-          margin: const EdgeInsets.symmetric(vertical: 8),
-          padding: const EdgeInsets.fromLTRB(16, 24, 4.4, 0),
-          // height: 56,
-          // height: context.deviceHeight(0.056),
-          width: double.infinity,
-        ),
         background: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           child: Image.asset(
             AssetStrings.gptDarkIcon,
             color: AppColors.logoColor,
+            scale: 14,
             // AssetStrings.gptIcon,
             // fit: BoxFit.fill,
           ),

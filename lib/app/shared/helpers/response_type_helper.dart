@@ -1,8 +1,5 @@
-import 'package:chat_gpt/app/shared/helpers/copy_to_clipboard.dart';
-import 'package:chat_gpt/app/shared/utils/strings.dart';
 import 'package:chat_gpt/app/shared/views/widgets/response_type_widget/code_widget.dart';
 import 'package:chat_gpt/app/shared/views/widgets/response_type_widget/link_widget.dart';
-import 'package:chat_gpt/app/shared/views/widgets/slivers/sliver_box_adapter.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -24,7 +21,7 @@ class ResponseTypeHelper {
       if (index < match.start) {
         textSpans.add(TextSpan(
           text: text.substring(index, match.start),
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.bodyLarge,
         ));
       }
 
@@ -33,7 +30,7 @@ class ResponseTypeHelper {
         text: match.group(0),
         style: Theme.of(context)
             .textTheme
-            .titleMedium!
+            .bodyLarge!
             .copyWith(color: AppColors.blueColor),
         recognizer: TapGestureRecognizer()
           ..onTap = () {
@@ -54,7 +51,7 @@ class ResponseTypeHelper {
     if (index < text.length) {
       textSpans.add(TextSpan(
         text: text.substring(index),
-        style: Theme.of(context).textTheme.titleMedium,
+        style: Theme.of(context).textTheme.bodyLarge,
       ));
     }
 
@@ -71,7 +68,7 @@ class ResponseTypeHelper {
       if (index < match.start) {
         textSpans.add(TextSpan(
           text: text.substring(index, match.start),
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.bodyLarge,
         ));
       }
 
@@ -80,7 +77,7 @@ class ResponseTypeHelper {
         text: match.group(0),
         style: Theme.of(context)
             .textTheme
-            .titleMedium!
+            .bodyLarge!
             .copyWith(color: AppColors.blueColor),
       ));
 
@@ -92,7 +89,7 @@ class ResponseTypeHelper {
     if (index < text.length) {
       textSpans.add(TextSpan(
         text: text.substring(index),
-        style: Theme.of(context).textTheme.titleMedium,
+        style: Theme.of(context).textTheme.bodyLarge,
       ));
     }
 

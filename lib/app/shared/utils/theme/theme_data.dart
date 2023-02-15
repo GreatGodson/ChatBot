@@ -12,9 +12,7 @@ class MyTheme {
       bodyMedium: TextStyle(
         color: AppColors.whiteColor,
       ),
-      bodyLarge: TextStyle(
-        color: AppColors.whiteColor,
-      ),
+      bodyLarge: TextStyle(color: AppColors.whiteColor, fontSize: 16),
       titleMedium: TextStyle(color: AppColors.whiteColor, fontSize: 16),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(color: AppColors.primaryColor),

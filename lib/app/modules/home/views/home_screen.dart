@@ -118,7 +118,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           text: textEditingController.text, sender: AppStrings.user);
       ref.read(isTyping.notifier).state = true;
 
-      Future.delayed(const Duration(seconds: 15), () {
+      Future.delayed(const Duration(seconds: 20), () {
         // ignore: unnecessary_null_comparison
         if (ref.read(isTyping.notifier).state) {
           ref.read(isTyping.notifier).state = false;

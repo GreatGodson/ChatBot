@@ -27,6 +27,9 @@ dependencies:
   flutter_svg: ^2.0.1
   flutter_dotenv: ^5.0.2
   url_launcher: ^6.1.9
+  auto_size_text: 3.0.0
+  flutter_animate: 1.0.0
+  page_transition: 2.0.4
 
 
 

@@ -22,6 +22,20 @@ The design inspiration is gotten from the chatGPT interface,
 |    :---:     |     :---:      |  
 | <img src="assets/screenshots/third.png" width="500">   | <img src="assets/screenshots/fourth.png" width="500">   |
 
+## Guideline
+
+Creating a .env file with API key
+
+In order to use the API in your project, you will need to create a .env file in the root directory of your project, 
+just like the .env.example file provided.
+
+Copy the .env.example file in the root directory of your project and rename it to .env.
+Replace the ******** variable in the .env file with an actual API key.
+You can obtain an API key by creating an account on the OpenAI platform at [OpenAi](https://platform.openai.com/).
+ If you have any trouble obtaining the API key, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/godson-okezie-13593719a) .
+The .env file is used to store environment variables, which are used by the application to access external services.
+It is important that you do not share your API key with anyone, as it can be used to access your account and resources.
+
 
 
 ## Contributions

@@ -127,7 +127,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
       chatGpt!.builder(t!).onCompleteStream(request: request);
 
-      Future.delayed(const Duration(seconds: 20), () {
+      Future.delayed(const Duration(seconds: 30), () {
         // ignore: unnecessary_null_comparison
         if (ref.read(isTyping.notifier).state) {
           ref.read(isTyping.notifier).state = false;

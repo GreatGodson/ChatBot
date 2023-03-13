@@ -19,6 +19,8 @@ class AppColors {
 
   static const Color iconColor = Color(0XFF8E8E9F);
 
+  ///randomize color
+
   static Color randomColor() {
     var colors = [
       AppColors.greenColor,
